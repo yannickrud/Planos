@@ -8,23 +8,31 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textMessage: TextView
+
+
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.navigation_feed -> {
                 textMessage.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_kalender -> {
                 textMessage.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.navigation_documents -> {
                 textMessage.setText(R.string.title_notifications)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_user -> {
+                textMessage.setText(R.string.title_user)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
